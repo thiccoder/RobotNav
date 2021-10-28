@@ -127,8 +127,7 @@ namespace RobotNav
 
         private void Reposition_Click(object sender, EventArgs e)
         {
-            double lat, lng;
-            if (TryParseCoords(out lat, out lng))
+            if (TryParseCoords(out double lat, out double lng))
             {
                 selectedMarker.Position = new PointLatLng(lat, lng);
                 selectedMarker.ToolTipText = string.Format("Point {0} ({1};{2})", selectedMarkerIdx + 1, lat, lng);
@@ -137,8 +136,7 @@ namespace RobotNav
 
         private void AddMarker_Click(object sender, EventArgs e)
         {
-            double lat, lng;
-            if (TryParseCoords(out lat,out lng))
+            if (TryParseCoords(out double lat, out double lng))
             {
                 Markers.Add(Create(Markers.Count + 1, new PointLatLng(lat, lng)));
                 RedrawPath();
